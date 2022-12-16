@@ -18,12 +18,12 @@ $(".search-result-item:contains(/policies)").addClass("platformfilter");
 $(".search-result-item:contains(/partnerstack-partner-program)").addClass("platformfilter");
 
 //flag some items as top listing items
-$(".search-result-item:contains(65,000+)").addClass("topfilter");
-$(".search-result-item:contains(company)").addClass("topfilter");
-$(".search-result-item:contains(/pricing)").addClass("topfilter")
-$(".search-result-item:contains(/book-a-demo)").addClass("topfilter");
-$(".search-result-item:contains(legal)").addClass("topfilter");
-$(".search-result-item:contains(Certified Partner)").addClass("topfilter");
+//$(".search-result-item:contains(65,000+)").addClass("topfilter");
+// $(".search-result-item:contains(company)").addClass("topfilter");
+// $(".search-result-item:contains(/pricing)").addClass("topfilter")
+// $(".search-result-item:contains(/book-a-demo)").addClass("topfilter");
+// $(".search-result-item:contains(legal)").addClass("topfilter");
+// $(".search-result-item:contains(Certified Partner)").addClass("topfilter");
 
 
 //Add background images to results without images
