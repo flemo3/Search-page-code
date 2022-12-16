@@ -235,7 +235,7 @@ if (referrer.indexOf('glossary') != -1) {
         //Sort order for search results
         $(".search-result-items").orderChildren([
 
-            "getValue(searchQuery)",
+            "+getValue(searchQuery)+",
             ".platformfilter",
             ".customerfilter",
             ".guidesfilter",
@@ -266,3 +266,5 @@ if (referrer.indexOf('glossary') != -1) {
     });
 }
 
+
+console.log(getValue(searchQuery)); // Outputs 'red'
