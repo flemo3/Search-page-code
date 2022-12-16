@@ -197,32 +197,6 @@ if (referrer.indexOf('glossary') != -1) {
         $("." + $(this).attr('name')).addClass("searchfilter");
 
 
-        var value = null;
-        
-        function getValue(key) {
-            var pairs = [{
-                key: 'apple',
-                value: 'red'
-            }, {
-                key: 'banana',
-                value: 'yellow'
-            }, {
-                key: 'grape',
-                value: 'purple'
-            }];
-
-            
-            $.each(pairs, function(index, pair) {
-                if (pair.key === key && pair.value === true) {
-                    value = pair.value;
-                    return false; // breaks out of the loop
-                }
-            });
-            return value;
-        }
-
-        console.log(getValue('apple')); // Outputs 'red'
-
 
 
         //Sort order for search results 
