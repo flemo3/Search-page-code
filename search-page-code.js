@@ -196,6 +196,31 @@ if (referrer.indexOf('glossary') != -1) {
         $("." + $(this).attr('name')).fadeIn();
         $("." + $(this).attr('name')).addClass("searchfilter");
 
+        function getValue(key) {
+            var pairs = [{
+                key: 'apple',
+                value: 'red'
+            }, {
+                key: 'banana',
+                value: 'yellow'
+            }, {
+                key: 'grape',
+                value: 'purple'
+            }];
+
+            var value = null;
+            $.each(pairs, function(index, pair) {
+                if (pair.key === key && pair.value === true) {
+                    value = pair.value;
+                    return false; // breaks out of the loop
+                }
+            });
+            return value;
+        }
+
+        console.log(getValue('apple')); // Outputs 'red'
+
+
 
         //Sort order for search results 
         $.fn.orderChildren = function(order) {
@@ -210,14 +235,7 @@ if (referrer.indexOf('glossary') != -1) {
 
         //Sort order for search results
         $(".search-result-items").orderChildren([
-            
-            "marketplacefilter",
-            "companyfilter",
-            "pricingfilter",
-            "resourcesfilter",
-            "demoformfilter",
-            "policiesfilter",
-            "partnerformfilter",
+
             ".platformfilter",
             ".customerfilter",
             ".guidesfilter",
