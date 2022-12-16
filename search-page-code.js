@@ -8,13 +8,15 @@ $(".search-result-item:contains(/guides/)").addClass("guidesfilter");
 $(".search-result-item:contains(/glossary/)").addClass("glossaryfilter");
 $(".search-result-item:contains(/platform/)").addClass("platformfilter");
 
-$(".search-result-item:contains(/marketplace)").addClass("platformfilter");
-$(".search-result-item:contains(/company)").addClass("platformfilter");
-$(".search-result-item:contains(/pricing)").addClass("platformfilter");
-//$(".search-result-item:contains(/resources)").addClass("platformfilter");
-$(".search-result-item:contains(/book-a-demo)").addClass("platformfilter");
-$(".search-result-item:contains(/policies)").addClass("platformfilter");
-$(".search-result-item:contains(/partnerstack-partner-program)").addClass("platformfilter");
+$(".search-result-item:contains(/marketplace)").addClass("marketplacefilter");
+$(".search-result-item:contains(/company)").addClass("companyfilter");
+$(".search-result-item:contains(/pricing)").addClass("pricingfilter");
+$(".search-result-item:contains(/resources)").addClass("resourcesfilter");
+$(".search-result-item:contains(/book-a-demo)").addClass("demoformfilter");
+$(".search-result-item:contains(/policies)").addClass("policiesfilter");
+$(".search-result-item:contains(/partnerstack-partner-program)").addClass("partnerformfilter");
+
+
 
 //flag some items as top listing items
 //$(".search-result-item:contains(65,000+)").addClass("topfilter");
@@ -195,34 +197,6 @@ if (referrer.indexOf('glossary') != -1) {
         $("." + $(this).attr('name')).addClass("searchfilter");
 
 
-        function getValue(key) {
-            var pairs = [{
-                key: 'apple',
-                value: 'red'
-            }, {
-                key: 'banana',
-                value: 'yellow'
-            }, {
-                key: 'grape',
-                value: 'purple'
-            }];
-
-            var value = null;
-            $.each(pairs, function(index, pair) {
-                if (pair.key === key && pair.value === true) {
-                    value = pair.value;
-                    return false; // breaks out of the loop
-                }
-            });
-            return value;
-        }
-
-        alert(getValue('apple')); // Outputs 'red'
-        console.log(getValue('apple')); // Outputs 'red'
-
-
-
-
         //Sort order for search results 
         $.fn.orderChildren = function(order) {
             this.each(function() {
@@ -236,7 +210,14 @@ if (referrer.indexOf('glossary') != -1) {
 
         //Sort order for search results
         $(".search-result-items").orderChildren([
-            ".topfilter",
+            
+            "marketplacefilter",
+            "companyfilter",
+            "pricingfilter",
+            "resourcesfilter",
+            "demoformfilter",
+            "policiesfilter",
+            "partnerformfilter",
             ".platformfilter",
             ".customerfilter",
             ".guidesfilter",
