@@ -196,6 +196,9 @@ if (referrer.indexOf('glossary') != -1) {
         $("." + $(this).attr('name')).fadeIn();
         $("." + $(this).attr('name')).addClass("searchfilter");
 
+
+        var value = null;
+        
         function getValue(key) {
             var pairs = [{
                 key: 'apple',
@@ -208,7 +211,7 @@ if (referrer.indexOf('glossary') != -1) {
                 value: 'purple'
             }];
 
-            var value = null;
+            
             $.each(pairs, function(index, pair) {
                 if (pair.key === key && pair.value === true) {
                     value = pair.value;
