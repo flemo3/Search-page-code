@@ -12,7 +12,7 @@ $(".search-result-item:contains(/platform/)").addClass("platformfilter");
 $(".search-result-item:contains(/marketplace)").addClass("platformfilter");
 $(".search-result-item:contains(/company)").addClass("platformfilter");
 $(".search-result-item:contains(/pricing)").addClass("platformfilter");
-$(".search-result-item:contains(/resources)").addClass("platformfilter");
+//$(".search-result-item:contains(/resources)").addClass("platformfilter");
 $(".search-result-item:contains(/book-a-demo)").addClass("platformfilter");
 $(".search-result-item:contains(/policies)").addClass("platformfilter");
 $(".search-result-item:contains(/partnerstack-partner-program)").addClass("platformfilter");
@@ -24,6 +24,7 @@ $(".search-result-item:contains(/pricing)").addClass("topfilter")
 $(".search-result-item:contains(/book-a-demo)").addClass("topfilter");
 $(".search-result-item:contains(legal)").addClass("topfilter");
 $(".search-result-item:contains(Certified Partner)").addClass("topfilter");
+
 
 //Add background images to results without images
 $(".w-dyn-bind-empty").attr("src", "https://uploads-ssl.webflow.com/637b90ceaf45f5d5053f6f20/638f55967b291e7d4b8a6163_search-default-image.webp");
