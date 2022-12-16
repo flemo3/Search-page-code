@@ -206,7 +206,7 @@ if (referrer.indexOf('glossary') != -1) {
           return value;
         }
 
-        console.log(getValue('apple')); // Outputs 'red'
+     
 
 
 
@@ -264,3 +264,6 @@ if (referrer.indexOf('glossary') != -1) {
 
     });
 }
+
+
+   console.log(getValue('apple')); // Outputs 'red'
