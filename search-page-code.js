@@ -191,7 +191,7 @@ if (referrer.indexOf('glossary') != -1) {
 
         function getValue(key) {
           var pairs = [
-            { key: 'apple', value: 'red' },
+            { key: 'marketplace', value: '.marketplaceFilter' },
             { key: 'banana', value: 'yellow' },
             { key: 'grape', value: 'purple' }
           ];
@@ -235,6 +235,7 @@ if (referrer.indexOf('glossary') != -1) {
         //Sort order for search results
         $(".search-result-items").orderChildren([
 
+            "getValue(searchQuery)",
             ".platformfilter",
             ".customerfilter",
             ".guidesfilter",
@@ -265,5 +266,3 @@ if (referrer.indexOf('glossary') != -1) {
     });
 }
 
-
-   console.log(getValue('apple')); // Outputs 'red'
