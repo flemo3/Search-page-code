@@ -188,8 +188,24 @@ if (referrer.indexOf('glossary') != -1) {
     $('#platformfilter').prop('checked', true);
     $('.platform-chk div.w-checkbox-input').addClass("w--redirected-checked");
 
+        function getValue(key) {
+          var pairs = [
+            { key: 'apple', value: 'red' },
+            { key: 'banana', value: 'yellow' },
+            { key: 'grape', value: 'purple' }
+          ];
 
+          var value = null;
+          $.each(pairs, function(index, pair) {
+            if (pair.key === key) {
+              value = pair.value;
+              return false; // breaks out of the loop
+            }
+          });
+          return value;
+        }
 
+       getValue(searchQuery);
 
 
     //Hide all results
