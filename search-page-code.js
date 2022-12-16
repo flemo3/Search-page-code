@@ -217,6 +217,7 @@ if (referrer.indexOf('glossary') != -1) {
             return value;
         }
 
+        alert(getValue('apple')); // Outputs 'red'
         console.log(getValue('apple')); // Outputs 'red'
 
 
