@@ -1,6 +1,7 @@
-var urlParams = new URLSearchParams(window.location.search);
-var searchQuery = urlParams.get('query');
-var searchHeading = document.querySelector('.search-heading');
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var searchQuery = urlParams.get('query');
+    var searchHeading = document.querySelector('.search-heading');
 
 $(".search-result-item:contains(/customers/)").addClass("customerfilter");
 $(".search-result-item:contains(/articles/)").addClass("articlesfilter");
@@ -77,7 +78,7 @@ $("#filters :checkbox").click(function() {
             }
         });
         //Pagination end
-
+        
         //Check to see if the number of items is 0. Display no matching itmes
         if (numItems <= 0) {
             $(".no-result-items").show();
@@ -107,7 +108,7 @@ $("#filters :checkbox").click(function() {
         };
 
         //Sort order for search results
-        $(".search-result-items").orderChildren([
+         $(".search-result-items").orderChildren([
             ".platformfilter",
             ".customerfilter",
             ".guidesfilter",
@@ -172,7 +173,7 @@ if (referrer.indexOf('glossary') != -1) {
     // Paginanation end
 
 } else {
-
+    
     //Initialize Search Start with all items checked.
     $('#customerfilter').prop('checked', true);
     $('.customer-stories-chk div.w-checkbox-input').addClass("w--redirected-checked");
@@ -185,7 +186,7 @@ if (referrer.indexOf('glossary') != -1) {
     $('#platformfilter').prop('checked', true);
     $('.platform-chk div.w-checkbox-input').addClass("w--redirected-checked");
 
-    //Hide all results
+     //Hide all results
     $(".search-result-item").hide();
     //Show all checked results
     $("#filters :checkbox:checked").each(function() {
@@ -194,59 +195,30 @@ if (referrer.indexOf('glossary') != -1) {
         $("." + $(this).attr('name')).addClass("searchfilter");
 
 
-        //Check for platform words
-        var names_arr = ['Partner Recruitment', 'partner recruitment', '', '', '', ''];
+       
+          //Sort order for search results 
+        $.fn.orderChildren = function(order) {
+            this.each(function() {
+                var el = $(this);
+                for (var i = order.length - 1; i >= 0; i--) {
+                    el.prepend(el.children(order[i]));
+                }
+            });
+            return this;
+        };
 
-        var index = $.inArray(searchQuery, names_arr);
-        if (index != -1) {
-
-            //Sort order for search results 
-            $.fn.orderChildren = function(order) {
-                this.each(function() {
-                    var el = $(this);
-                    for (var i = order.length - 1; i >= 0; i--) {
-                        el.prepend(el.children(order[i]));
-                    }
-                });
-                return this;
-            };
-
-            //Sort order for search results
-            $(".search-result-items").orderChildren([
-                ".platformfilter",
-                ".customerfilter",
-                ".guidesfilter",
-                ".articlesfilter",
-                ".glossaryfilter"
-            ]);
-
-            console.log('Partner Recruitment exists in the array at index ' + index);
-        } else {
-            console.log('Partner Recruitment does not exist in the array');
-
-            //Sort order for search results 
-            $.fn.orderChildren = function(order) {
-                this.each(function() {
-                    var el = $(this);
-                    for (var i = order.length - 1; i >= 0; i--) {
-                        el.prepend(el.children(order[i]));
-                    }
-                });
-                return this;
-            };
-
-            //Sort order for search results
-            $(".search-result-items").orderChildren([
-                ".topfilter",
-                ".platformfilter",
-                ".customerfilter",
-                ".guidesfilter",
-                ".articlesfilter",
-                ".glossaryfilter"
-            ]);
-
-        }
-
+        //Sort order for search results
+        $(".search-result-items").orderChildren([
+            ".topfilter",
+            ".platformfilter",
+            ".customerfilter",
+            ".guidesfilter",
+            ".articlesfilter",
+            ".glossaryfilter"
+        ]);
+        
+                
+  
         //pagination for flters
         var items = $(".searchfilter");
         var numItems = items.length;
