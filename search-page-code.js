@@ -1,4 +1,4 @@
-<script>
+
     var urlParams = new URLSearchParams(window.location.search);
     var searchQuery = urlParams.get('query');
     var searchHeading = document.querySelector('.search-heading');
@@ -268,5 +268,3 @@ if (referrer.indexOf('glossary') != -1) {
 
     });
 }
-
-</script>
