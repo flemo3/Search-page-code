@@ -189,24 +189,6 @@ if (referrer.indexOf('glossary') != -1) {
     $('.platform-chk div.w-checkbox-input').addClass("w--redirected-checked");
 
 
-        function getValue(key) {
-          var pairs = [
-            { key: 'marketplace', value: '.marketplaceFilter' },
-            { key: 'banana', value: 'yellow' },
-            { key: 'grape', value: 'purple' }
-          ];
-
-          var value = null;
-          $.each(pairs, function(index, pair) {
-            if (pair.key === key) {
-              value = pair.value;
-              return false; // breaks out of the loop
-            }
-          });
-          return value;
-        }
-
-     
 
 
 
@@ -266,5 +248,3 @@ if (referrer.indexOf('glossary') != -1) {
     });
 }
 
-
-console.log(getValue(searchQuery)); // Outputs 'red'
