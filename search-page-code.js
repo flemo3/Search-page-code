@@ -1,7 +1,6 @@
-
-    var urlParams = new URLSearchParams(window.location.search);
-    var searchQuery = urlParams.get('query');
-    var searchHeading = document.querySelector('.search-heading');
+var urlParams = new URLSearchParams(window.location.search);
+var searchQuery = urlParams.get('query');
+var searchHeading = document.querySelector('.search-heading');
 
 $(".search-result-item:contains(/customers/)").addClass("customerfilter");
 $(".search-result-item:contains(/articles/)").addClass("articlesfilter");
@@ -79,7 +78,7 @@ $("#filters :checkbox").click(function() {
             }
         });
         //Pagination end
-        
+
         //Check to see if the number of items is 0. Display no matching itmes
         if (numItems <= 0) {
             $(".no-result-items").show();
@@ -109,7 +108,7 @@ $("#filters :checkbox").click(function() {
         };
 
         //Sort order for search results
-         $(".search-result-items").orderChildren([
+        $(".search-result-items").orderChildren([
             ".platformfilter",
             ".customerfilter",
             ".guidesfilter",
@@ -174,7 +173,7 @@ if (referrer.indexOf('glossary') != -1) {
     // Paginanation end
 
 } else {
-    
+
     //Initialize Search Start with all items checked.
     $('#customerfilter').prop('checked', true);
     $('.customer-stories-chk div.w-checkbox-input').addClass("w--redirected-checked");
@@ -187,7 +186,7 @@ if (referrer.indexOf('glossary') != -1) {
     $('#platformfilter').prop('checked', true);
     $('.platform-chk div.w-checkbox-input').addClass("w--redirected-checked");
 
-     //Hide all results
+    //Hide all results
     $(".search-result-item").hide();
     //Show all checked results
     $("#filters :checkbox:checked").each(function() {
@@ -196,8 +195,34 @@ if (referrer.indexOf('glossary') != -1) {
         $("." + $(this).attr('name')).addClass("searchfilter");
 
 
-       
-          //Sort order for search results 
+        function getValue(key) {
+            var pairs = [{
+                key: 'apple',
+                value: 'red'
+            }, {
+                key: 'banana',
+                value: 'yellow'
+            }, {
+                key: 'grape',
+                value: 'purple'
+            }];
+
+            var value = null;
+            $.each(pairs, function(index, pair) {
+                if (pair.key === key && pair.value === true) {
+                    value = pair.value;
+                    return false; // breaks out of the loop
+                }
+            });
+            return value;
+        }
+
+        console.log(getValue('apple')); // Outputs 'red'
+
+
+
+
+        //Sort order for search results 
         $.fn.orderChildren = function(order) {
             this.each(function() {
                 var el = $(this);
@@ -217,9 +242,9 @@ if (referrer.indexOf('glossary') != -1) {
             ".articlesfilter",
             ".glossaryfilter"
         ]);
-        
-                
-  
+
+
+
         //pagination for flters
         var items = $(".searchfilter");
         var numItems = items.length;
